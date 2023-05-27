@@ -9,5 +9,21 @@ datasource db {
 
 model User {
   id String @id @default(uuid())
+  githubId Int @unique
   nome String
+  login String
+  avatarUrl String
+
+  memories Memory[]
+}
+
+model Memory {
+  id String @id @default(uuid())
+  imagemVideoUrl String
+  conteudo String
+  publica Boolean @default(false)
+  criado_em DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  userId String
 }
