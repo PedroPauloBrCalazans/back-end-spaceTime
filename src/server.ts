@@ -19,6 +19,6 @@ app.register(jwt, {
 app.register(authRoutes)
 app.register(memoriesRoutes)
 
-app.listen({ port: 7474 }).then(() => {
+app.listen({ port: 7474, host: '0.0.0.0' }).then(() => {
   console.log('🚀 HTTP server running on http://localhost:7474')
 })
