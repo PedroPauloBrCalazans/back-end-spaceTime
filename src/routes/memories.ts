@@ -21,6 +21,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
         id: memoria.id,
         imgVideoUrl: memoria.imagemVideoUrl,
         resumo: memoria.conteudo.substring(0, 115).concat('...'),
+        criado_em: memoria.criado_em,
       }
     })
   })
